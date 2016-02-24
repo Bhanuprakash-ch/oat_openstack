@@ -1,10 +1,21 @@
-===================README===========================
-This project is used to show the steps to integrate OpenAttestation project with OpenStack.
-It aims to ensure the instance could be launched on the trusted host and provide a secured job execution environment.
+# oat_openstack
 
-The OpenAttestation (OAT) project version is 2.2 and OpeStack Juno version is used.
-To setup OpenStack environment, Fuel 6.0 is used. After OpenStack installation, patch the Dashboard and Nova patch,
-then restart all openstack services. The environment assume the OpenAttestation Server is ready to use.
-Users could refer to OpenAttestation project wiki.
+The goal of the project is to provide VM level attestation in OpenStack. It leverages the projects including OpenStack, OpenAttestation and Intel TXT. The success criteria is to create instance on trusted host within OpenStack environment.
 
-For more technical details and usage of this project, please refer to file UserGuid.pdf in the repo.
+
+## Deploy
+
+Fuel 6.0/6.1 with both OS, Ubuntu/CentOS, are suitable. The neutron is enabled with GRE mode. A node installed Ubuntu 14.04 is be used to setup OpenAttestation server. There are three branches for the repo.
+
+```bash
+git branch -a
+  fuel-centos
+  fuel6.0-ubuntu
+  fuel6.1-ubuntu
+  master
+```
+
+Fuel-centos branch works for CentOS both Fuel 6.0 and 6.1, while the rest be used for Ubuntu of Fuel 6.0 and Fuel 6.1
+
+Please refer to file UserGuide.pdf for the usage in details.
+
