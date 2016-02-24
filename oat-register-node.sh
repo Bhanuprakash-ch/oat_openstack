@@ -39,10 +39,10 @@ hostname=`hostname`
 # Get some details of the system (hardware, OS, etc.) to enter into the OAT db
 oem_manu=`dmidecode -s system-manufacturer`
 oem_desc=`dmidecode -s system-product-name`
-os=`cat /etc/issue | awk -F" " '{print $1}'`
-os_ver=`cat /etc/issue | awk -F" " '{print $2}'`
-#os=`cat /etc/redhat-release | awk -F"release" '{print $1}'`
-#os_ver=`cat /etc/redhat-release | awk -F"release" '{print $2}'`
+
+
+os=`cat /etc/redhat-release | awk -F"release" '{print $1}'`
+os_ver=`cat /etc/redhat-release | awk -F"release" '{print $2}'`
 vmm="KVM"
 vmm_ver="1.6.2"
 vmm_desc=$vmm
