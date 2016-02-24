@@ -25,7 +25,7 @@ rm -f /var/log/nova/*
 if [ $role = "controller" ];then
     echo "Restart Controller Nova services"
     nohup /usr/bin/nova-api --config-file /etc/nova/nova.conf --config-file /etc/nova/nova-txt.conf --logfile /var/log/nova/api.log > /dev/null 2>& 1 &
-    nohup /usr/bin/nova-network --config-file /etc/nova/nova.conf --config-file /etc/nova/nova-txt.conf --logfile /var/log/nova/network.log > /dev/null 2>& 1 &
+    nohup /usr/bin/nova-objectstore --config-file /etc/nova/nova.conf --config-file /etc/nova/nova-txt.conf --logfile /var/log/nova/network.log > /dev/null 2>& 1 &
     nohup /usr/bin/nova-novncproxy --config-file /etc/nova/nova.conf  --config-file /etc/nova/nova-txt.conf  --logfile /var/log/novncproxy.log > /dev/null 2>& 1 &
     nohup /usr/bin/nova-consoleauth --config-file /etc/nova/nova.conf  --config-file /etc/nova/nova-txt.conf --logfile /var/log/nova/consoleauth.log > /dev/null 2>& 1 &
     nohup /usr/bin/nova-scheduler --config-file /etc/nova/nova.conf  --config-file /etc/nova/nova-txt.conf --logfile /var/log/nova/scheduler.log > /dev/null 2>& 1 &
